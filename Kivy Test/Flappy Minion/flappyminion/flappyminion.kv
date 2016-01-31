@@ -1,0 +1,106 @@
+<Player>:
+    size_hint: None, None
+    source: 'Image/minion.png'
+    allow_stretch: True
+    keep_ratio: False
+    anim_delay: 1
+<EnemyTop>:
+	size_hint: None, None
+    source: 'Image/enemy_top.png'
+    allow_stretch: True
+    keep_ratio: False
+<EnemyBottom>:
+    size_hint: None, None
+    source: 'Image/enemy_bottom.png'
+    allow_stretch: True
+    keep_ratio: False
+<BossMinion>:
+    size_hint: .3,.3
+    source: 'Image/boss_minion.png'
+    allow_stretch: True
+    keep_ratio: False
+<WinGame>:
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'Image/WinGame.jpg'
+    orientation: 'vertical'
+    padding: 50
+    spacing: 20
+    Label:
+        text: 'Vui Không, 14/2 vui vẻ nha hihi'
+        font_size: 30
+        color: 0, 0, 0, 1
+    Image:
+        source: 'Image/anh.zip'
+        allow_stretch: True
+    Label:
+        text: 'hihi em cứu được anh rồi'
+        font_size: 30
+        color: 0, 0, 0, 1
+    Image:
+        source: 'Image/tam.png'
+        allow_stretch: True
+    Button:
+        size_hint: 1, .5
+        text: 'Thoát'
+        on_press: app.stop()
+
+<FlappyMinion>:
+    score_label: score_id
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'Image/background.png'
+        Rectangle:
+            size: self.width, self.height / 5
+            pos: self.pos
+            source: 'Image/land.png'
+    Label:
+        id: score_id
+        text: 'Điểm : ' + str(int(root.score))
+        font_size: 20
+        size_hint: None,None
+        pos_hint: {'x' : .8, 'y' : .9}
+<MenuButton@Button>:
+    size_hint: .5, 1
+    background_color: .5, .5, 0, .3
+<MenuInstruction>:
+    size_hint: .6, .6
+    title: 'Hướng Dẫn'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text:'Ánh ơi \nhôm qua minion hẹn anh \nqua dh công nghiệp để gặp em\n anh qua bất ngờ bị nó bắt cóc rồi\nhuhu, trước khi bị chúng đưa đi\nanh đã kịp viết 1 phần mềm\nnhưng bọn chúng đã mã hóa rồi\nnhiệm vụ của em là phải đạt\n được 30 điểm để cứu anh\nbọn chúng đang tra tấn anh\nnhanh lên.'
+
+<Menu>:
+    BoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'Image/background_game.jpg'
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        MenuButton:
+            text: 'Chơi Game'
+            on_press: root._playgame()
+        MenuButton:
+            text: 'Hướng Dẫn'
+            on_press: root._instruction()
+        MenuButton:
+            text: 'Thoát'
+            on_press: app.stop()
+        TextInput:
+            size_hint: 1, .2
+            id: textinput_id
+        MenuButton:
+            size_hint: 1, .2
+            on_press: root._wingame(textinput_id.text)
+            text: textinput_id.text
+
+

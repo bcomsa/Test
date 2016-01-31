@@ -1,0 +1,31 @@
+# ex44.kv
+
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ex44 ex44
+
+<FirstListItemButton>:
+    on_press: app.root.change(*args)
+
+<SecondListItemButton>:
+    on_press: app.root.change1(*args)
+
+<ThirdListItemButton>:
+    on_press: app.root.change2(*args)
+
+ 
+<Ex44>:
+    ListView:
+        adapter:
+            ListAdapter(data=root.d1,
+            selection_mode='single',
+            cls=ex44.FirstListItemButton)
+    ListView:
+        adapter:
+            ListAdapter(data=root.d2,
+            selection_mode='single',
+            cls=ex44.SecondListItemButton)
+    ListView:
+        adapter:
+            ListAdapter(data=root.d3,
+            selection_mode='single',
+            cls=ex44.ThirdListItemButton)

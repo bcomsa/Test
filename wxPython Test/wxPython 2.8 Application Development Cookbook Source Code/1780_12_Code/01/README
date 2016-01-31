@@ -1,0 +1,17 @@
+wxPython Cookbook
+Chapter 12 Application Infrastructure,
+           Building and Managing Applications for Distribution
+Recipe 1 Working with Standard Paths
+
+This is the example code for Recipe 1 Working with Standard Paths
+
+Prerequisites:
+
+1) Python 2.5 or 2.6 has been installed
+2) wxPython 2.8 has been installed for the version of Python used above
+
+How to run this script:
+
+From the command line or your IDE run the following command
+
+python stdpaths.py

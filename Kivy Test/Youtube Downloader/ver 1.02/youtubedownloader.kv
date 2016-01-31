@@ -1,0 +1,128 @@
+#:set HEIGHT_VIDEO_INFO 80
+#:set HEIGHT_BUTTON 50
+
+<YoutubeDisplayLayout>:
+	size_hint: 1, None
+	height: HEIGHT_VIDEO_INFO
+<ScrollViewInfo@ScrollView>:
+	canvas.before:
+		Color:
+			rgba: .5, .5, .5, .5
+		Rectangle:
+			pos: self.x + 1, self.y + 1
+			size: self.width - 1, self.height - 1
+<TitleLabel@Label>:
+	canvas.before:
+		Color:
+			rgba: .5, .5, 0, .5
+		Rectangle:
+			pos: self.x + 1, self.y + 1
+			size: self.width - 1, self.height - 1
+
+<Root>:
+	BoxLayout:
+		size_hint: 3, 1
+		orientation: 'vertical'
+		Label:
+			id: _status_lbl
+		BoxLayout:
+			size_hint: 1, .8
+			TextInput:
+				id: _text_input
+			Button:
+				size_hint: .15, 1
+				text: 'Lấy Link'
+				on_release: root.getLink()
+			Button:
+				size_hint: .15, 1
+				text: 'Dán'
+				on_release: root.pasteClipboard()
+			Button:
+				size_hint: .15, 1
+				text: 'Xóa Sạch'
+				on_release: root.clearAll()
+			Button:
+				size_hint: .15, 1
+				text: 'Cài Đặt'
+				on_release: app.open_settings()
+		ScrollView:
+			size_hint: 1, 5
+			do_scroll_x: False
+			BoxLayout:
+				id: _all_videos_box
+				orientation: 'vertical'
+				size_hint: 1, None
+				height: len(self.children) * HEIGHT_VIDEO_INFO
+		ChangeNameBar:
+			id: _change_video_name_input
+			size_hint: 1, .8
+
+	BoxLayout:
+		orientation: 'vertical'
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: 1, .5
+			TitleLabel:
+				size_hint: 1, .5
+				text: 'Tải Tất Cả'
+			GridLayout:
+				cols: 2
+				Button:
+					text: 'Video 720p'
+					font_size: 12
+					on_release: root.downloadAll('video', '1280x720')
+				Button:
+					text: 'Video 360p'
+					font_size: 12
+					on_release: root.downloadAll('video', '640x360')
+				Button:
+					text: 'Video 240p'
+					font_size: 12
+					on_release: root.downloadAll('video', '320x240')
+				Button:
+					text: 'Audio 128kbs'
+					font_size: 12
+					on_release: root.downloadAll('audio', '128k')
+		BoxLayout:
+			orientation: 'vertical'
+			TitleLabel:
+				size_hint: 1, .2
+				text: 'Tải Từng Mục'
+			BoxLayout:
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						size_hint: 1, .2
+						text: 'Video'
+					ScrollViewInfo:
+						do_scroll_x: False
+						BoxLayout:
+							id: _video_download_box
+							orientation: 'vertical'
+							size_hint: 1, None
+							height: len(self.children) * HEIGHT_BUTTON
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						size_hint: 1, .2
+						text: 'Audio'
+					ScrollViewInfo:
+						do_scroll_x: False
+						BoxLayout:
+							id: _audio_download_box
+							orientation: 'vertical'
+							size_hint: 1, None
+							height: len(self.children) * HEIGHT_BUTTON
+		BoxLayout:
+			BoxLayout:
+				orientation: 'vertical'
+				TitleLabel:
+					size_hint: 1, .2
+					text: 'Danh Sách Download'
+				ScrollViewInfo:
+					do_scroll_x: False
+					BoxLayout:
+						id: _queue_download_box
+						orientation: 'vertical'
+						size_hint: 1, None
+						height: len(self.children) * HEIGHT_BUTTON

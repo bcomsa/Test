@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
+<fullyQualifiedTypeName name="java.io.Closeable"/>
+<fullyQualifiedTypeName name="javax.swing.JPopupMenu"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
+<fullyQualifiedTypeName name="java.awt.Event"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+</qualifiedTypeNameHistroy>

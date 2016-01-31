@@ -1,0 +1,19 @@
+<Example>:
+    Button:
+        pos: [0,0]
+        size_hint: [None, None]
+        size: [200,200]
+        canvas.before:
+            #PushMatrix:
+            Line:
+                circle: [50, 100, 50]
+            Translate:
+                x: 100
+            Line:
+                circle: [50, 100, 50]
+            #PopMatrix:
+    Button:
+        pos: [200,0]
+        size_hint: [None, None]
+        size: [200,200]
+        background_color: [0,0,1,1]

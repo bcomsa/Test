@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="logo">
+      <img alt="LOGO" src="/images/logo.png"/>
+      <form action=".">
+	<input name="" type="text" value="search"/>
+	<input name="" type="submit" value="submit"/>
+      </form>
+    </div> <!-- End #logo -- >
+  </body>
+</html>

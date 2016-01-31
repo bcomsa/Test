@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<resource>
+  <object class="wxDialog" name="xrctestdlg">
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="spacer">
+        <option>1</option>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="sizeritem">
+        <object class="wxCheckBox">
+          <label>CheckBox Label</label>
+        </object>
+        <flag>wxALL|wxALIGN_CENTRE_HORIZONTAL</flag>
+        <border>5</border>
+      </object>
+      <object class="spacer">
+        <option>1</option>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <object class="sizeritem">
+            <object class="wxButton" name="wxID_OK">
+              <label>Ok</label>
+            </object>
+            <flag>wxALL</flag>
+            <border>5</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="wxID_CANCEL">
+              <label>Cancel</label>
+            </object>
+            <flag>wxALL</flag>
+            <border>5</border>
+          </object>
+          <orient>wxHORIZONTAL</orient>
+        </object>
+        <flag>wxALIGN_BOTTOM|wxALIGN_CENTRE_HORIZONTAL</flag>
+        <border>5</border>
+      </object>
+    </object>
+    <title>Xrc Test Dialog</title>
+    <style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER</style>
+  </object>
+</resource>

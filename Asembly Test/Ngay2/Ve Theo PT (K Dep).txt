@@ -1,0 +1,50 @@
+VeDuongThang PROC
+    push ax
+    push bx
+    push cx
+    push dx
+    
+    xor bx, bx
+    xor cx, cx
+    VeDuongThangLap1:
+    ;y = ax
+    xor ax, ax
+    mov al, a
+    mul cl
+    mov dx, ax
+    
+    ;+b
+    mov bl, b
+    add dx, bx
+    
+    ;Truc toa do nguoc voi Decac nen ta chuyen lai
+    ;Dao nguoc y
+    neg dx
+    ;Ha truc toa do xuong 199 don vi (tu` 0 -> 199)
+    add dx, 199
+    
+    ;KT neu nam trong man hinh thi ve tiep k thi ket thuc    
+    cmp dx, 0
+    jl VeDuongThangKetThuc
+    cmp dx, 200
+    jg VeDuongThangKetThuc    
+    
+    ;Chon ngat ve pixel
+    mov ah, 0Ch
+    ;Mau
+    mov al, 1111b
+    ;Vi tri Bat Dau
+    int 10h
+    
+    inc cx
+    jmp VeDuongThangLap1
+    
+    
+    
+    VeDuongThangKetThuc:
+    pop dx
+    pop cx
+    pop bx
+    pop ax
+    ret
+VeDuongThang ENDP    

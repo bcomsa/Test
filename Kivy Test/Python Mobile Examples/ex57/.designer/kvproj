@@ -1,0 +1,27 @@
+<time>
+    1431804777.34
+</time>
+<files>
+    <file>
+        /home/vuquangtam/Desktop/Hoc Tap/Test/Kivy Test/ex57/ex57.py
+    </file>
+</files>
+<classes>
+    <class>
+         <name>
+             Ex57
+         </name>
+         <file>
+             /home/vuquangtam/Desktop/Hoc Tap/Test/Kivy Test/ex57/ex57.py
+         </file>
+
+    </class>
+</classes>
+<app>
+    <class>
+         Ex57App
+    </class>
+    <file>
+         /home/vuquangtam/Desktop/Hoc Tap/Test/Kivy Test/ex57/ex57.py
+    </file>
+</app>

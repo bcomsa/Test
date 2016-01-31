@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Facebook",
+  "short_name": "Facebook",
+  "description": "",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+
+  "icons": {
+    "128": "assets/icon_64.png"
+  },
+
+  "app": {
+    "launch": {
+      "web_url": "http://fb.com/"
+    }
+  }
+
+}

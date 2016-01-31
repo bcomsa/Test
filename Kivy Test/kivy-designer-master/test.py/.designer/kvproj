@@ -1,0 +1,27 @@
+<time>
+    1431891214.7
+</time>
+<files>
+    <file>
+        /media/vuquangtam/MULTIMEDIA/Sync/Dropbox/Desktop/Test/Kivy Test/kivy-designer-master/test.py/main.py
+    </file>
+</files>
+<classes>
+    <class>
+         <name>
+             RootWidget
+         </name>
+         <file>
+             /media/vuquangtam/MULTIMEDIA/Sync/Dropbox/Desktop/Test/Kivy Test/kivy-designer-master/test.py/main.py
+         </file>
+
+    </class>
+</classes>
+<app>
+    <class>
+         MainApp
+    </class>
+    <file>
+         /media/vuquangtam/MULTIMEDIA/Sync/Dropbox/Desktop/Test/Kivy Test/kivy-designer-master/test.py/main.py
+    </file>
+</app>

@@ -1,0 +1,78 @@
+# ex25.kv
+
+<Ex25>:
+    cols: 2
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 1,0,0
+            Rectangle:
+                size: root.width/2,root.height/2
+                pos: 0,0
+			Color:
+				rgb: 0,1,1
+            Rectangle:
+                #source: 'gfc.png'
+                size: 34,101
+                pos: 180,125
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 0,1,0
+            Rectangle:
+                size: root.width/2,root.height/2
+                pos: 0,0
+			Color:
+                rgb: 1,0,0
+            Rectangle:
+                #source: 'gfc.png'
+                size: 34,101
+                pos: 180,125
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 0,0,1
+            Rectangle:
+                size: root.width/2,root.height/2
+                pos: 0,0
+            Color:
+                rgb: .5,0,.5
+            Rotate:
+                angle: -root.ANGLE
+                origin: root.width/4,root.height/4
+            Rectangle:
+                #source: 'gfc.png'
+                size: 34,101
+                pos: 180,125
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 0,1,1
+            Rectangle:
+                size: root.width/2,root.height/2
+                pos: 0, 0
+            Color:
+                rgb: .5,0,.5
+            Rotate:
+                angle: root.ANGLE
+                origin: root.width/4,root.height/4
+            Rectangle:
+                #source: 'gfc.png'
+                size: 34,101
+                pos: 180,125
+	FloatLayout:
+		size_hint: None, None
+		size: 0, 0
+		Button:
+			canvas.before:
+				Color:
+					rgb: 0.5,0.5,0.5
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			font_size: 10
+			text: 'Change Angle'
+			size_hint: None, None
+			size: 70,70
+			pos:root.center_x - self.width/2 ,root.center_y - self.height/2
+			on_press: root.ANGLE += 1

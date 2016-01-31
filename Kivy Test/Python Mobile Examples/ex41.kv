@@ -1,0 +1,78 @@
+
+
+# ex41.kv
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+
+<ScreenColor>:
+    name: 'screen_color'
+    ColorPicker:
+        color: root.manager.selected_color
+        on_color: root.manager.selected_color=self.color
+    Button:
+        text: 'Go to circle'
+        size_hint: None,None
+        size: 100,100
+        pos: 500,0
+        on_press: root.manager.current = 'screen_circle'
+    Button:
+        text: 'Go to square'
+        size_hint: None,None
+        size: 100,100
+        pos: 600,0
+        on_press: root.manager.current = 'screen_square'
+
+<ScreenCircle>:
+    name: 'screen_circle'
+    canvas:
+        Color:
+            rgba: root.manager.selected_color
+        Ellipse:
+            size: 250,250
+            pos: 150,150
+    Button:
+        text: 'Go to square'
+        size_hint: None, None
+        size: 100,100
+        pos: 0,0
+        on_press: root.manager.current = 'screen_square'
+    Button:
+        text: 'Select Color'
+        size_hint: None,None
+        size: 100,100
+        pos: 300,0
+        on_press: root.manager.current = 'screen_color'
+
+<ScreenSquare>:
+    name: 'screen_square'
+    canvas:
+        Color:
+            rgba: root.manager.selected_color
+        Rectangle:
+            size: 250,250
+            pos: 150,150
+    Button:
+        text: 'Go to circle'
+        size_hint: None,None
+        size: 100,100
+        pos: 0,0
+        on_press: root.manager.current = 'screen_circle'
+    Button:
+        text: 'Select Color'
+        size_hint: None,None
+        size: 100,100
+        pos: 300,0
+        on_press: root.manager.current = 'screen_color'
+
+<Ex41>:
+    canvas:
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    #transition: RiseInTransition()
+    ScreenCircle:
+    ScreenSquare:
+    ScreenColor:
+        
+

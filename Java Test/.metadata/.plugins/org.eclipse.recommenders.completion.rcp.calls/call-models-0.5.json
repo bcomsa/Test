@@ -1,0 +1,13 @@
+{
+  "D:\\Sync\\Dropbox\\Desktop\\Test\\Java Test\\HelloWorld\\src": {
+    "location": "D:\\Sync\\Dropbox\\Desktop\\Test\\Java Test\\HelloWorld\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027D:\\Sync\\Dropbox\\Desktop\\Test\\Java Test\\HelloWorld\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_45\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre1.8.0_45\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "Could not transfer artifact jre:jre:zip:call:1.0.0 from/to remote-models (http://download.eclipse.org/recommenders/models/kepler/): Error transferring file: null to http://download.eclipse.org/recommenders/models/kepler/jre/jre/1.0.0/jre-1.0.0-call.zip"
+  }
+}

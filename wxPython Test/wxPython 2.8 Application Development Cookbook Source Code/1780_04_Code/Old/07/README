@@ -1,0 +1,16 @@
+wxPython Cookbook
+Chapter 4
+Recipe 7 FlatNotebook
+
+This is the example code for Recipe 7 FlatNotebook.
+
+Prerequisites:
+
+1) Python 2.5 or 2.6 has been installed
+2) wxPython 2.8 has been installed for the version of Python used above
+
+How to run this script:
+
+From the command line or your IDE run the following command
+
+python flatbook.py

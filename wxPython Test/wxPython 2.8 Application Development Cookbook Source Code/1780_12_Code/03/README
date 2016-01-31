@@ -1,0 +1,21 @@
+wxPython Cookbook
+Chapter 12 Application Infrastructure,
+           Building and Managing Applications for Distribution
+Recipe 3 Using the SingleInstanceChecker
+
+This is the example code for Recipe 3 Using the SingleInstanceChecker
+
+Prerequisites:
+
+1) Python 2.5 or 2.6 has been installed
+2) wxPython 2.8 has been installed for the version of Python used above
+
+How to run this script:
+
+From the command line or your IDE run the following command
+
+python singleinst.py
+
+Then try to start another instance of the application from another console by
+running the same command as above again. Observe that the original instance
+will open a new window right after the second instance exits.

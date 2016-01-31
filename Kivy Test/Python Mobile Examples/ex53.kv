@@ -1,0 +1,39 @@
+# ex53.kv
+<Ex53>:
+    canvas:
+        Color:
+            rgb: .5,0,.5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text: 'Circle: ' + str(app.Val['circle'])
+        pos: 0,400
+        size_hint: None,None
+        size: 100,100
+    Label:
+        text: 'Square: ' + str(app.Val['square'])
+        pos: 150,400
+        size_hint: None,None
+        size: 100,100
+    Label:
+        text: 'Up Triangle: ' + str(app.Val['up_triangle'])
+        pos: 300,400
+        size_hint: None,None
+        size: 100,100
+    Label:
+        text: 'Down Triangle: ' + str(app.Val['down_triangle'])
+        pos: 450,400
+        size_hint: None,None
+        size: 100,100
+    Label:
+        text: 'Size: ' + str(app.Val['pixels'])
+        pos: 200,200
+        size_hint: None,None
+        size: 100,100
+    Button:
+        text: 'Settings\n(F1)'
+        pos: 200,50
+        size_hint: None,None
+        size: 100,100
+        on_press: app.open_settings()

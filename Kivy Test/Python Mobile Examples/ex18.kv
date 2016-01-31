@@ -1,0 +1,62 @@
+# ex18.kv
+
+<MyLabel@Label>:
+    color: 0, 0, .1, 1
+    pos_hint: {'x':.1}
+    size_hint_x: .1
+
+<MyProgressBar@ProgressBar>:
+    min: 0
+    max: 1
+    pos_hint: {'x':.25}
+    size_hint_x: .6
+    
+<Ex18>:
+    orientation: 'vertical'
+    canvas:
+        Color:
+            rgb: .9,.9,.9
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    RelativeLayout:
+        MyLabel:
+            text: 'P1 weight'
+        MyProgressBar:
+            id: w0
+    RelativeLayout:
+        MyLabel:
+            text: 'P2 weight'
+        MyProgressBar:
+            id: w1
+    RelativeLayout:
+        MyLabel:
+            text: 'P3 weight'
+        MyProgressBar:
+            id: w2
+    RelativeLayout:
+        MyLabel:
+            text: 'P4 weight'
+        MyProgressBar:
+            id: w3
+    Label:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        text: 't: {:.3f}'.format(my_slider.value)
+        size_hint_y: .5
+    Slider:
+        canvas.before:
+            Color:
+                rgb: .5, .6, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        id: my_slider
+        padding: 100
+        min: 0
+        max: 1
+        on_value: root.newWeights(*args)

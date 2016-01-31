@@ -1,0 +1,55 @@
+package helloworld;
+import java.awt.*;
+import java.awt.event.*;
+public class formRegister extends Frame implements ActionListener{
+	Label lbl1 = new Label("Register Form");
+	Label lbl2 = new Label("Name");
+	Label lbl3 = new Label("Sex");
+	Label lbl4 = new Label("Address");
+	Button btn1 = new Button("Register");
+	Button btn2 = new Button("Cancel");
+	TextField tf1 = new TextField(20);
+	TextField tf2 = new TextField(20);
+	CheckboxGroup cbg = new CheckboxGroup();
+	Checkbox cb1 = new Checkbox("Nam", cbg, true);
+	Checkbox cb2 = new Checkbox("Nữ", cbg, false);
+	GridBagConstraints gbc = new GridBagConstraints();
+	GridBagLayout gb = new GridBagLayout();
+	formRegister(String title){
+		super(title);
+		setLayout(gb);
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		addComponent(lbl1,1,0,1,1);
+		addComponent(lbl2,0,1,1,1);
+		addComponent(lbl3,0,2,1,1);
+		addComponent(lbl4,0,3,1,1);
+		addComponent(tf1,1,1,2,1);
+		addComponent(tf2,1,3,2,1);
+		addComponent(cb1,1,2,1,1);
+		addComponent(cb2,2,2,1,1);
+		addComponent(btn1,1,4,1,1);
+		addComponent(btn2,2,4,1,1);
+	}
+	public void addComponent(Component comp, int col, int row, int nrow, int ncol){
+		gbc.gridx = col;
+		gbc.gridy = row;
+		
+		gbc.gridwidth = nrow;
+		gbc.gridheight = ncol;
+		gb.setConstraints(comp,gbc);
+		add(comp);
+	}
+	public void actionPerformed(ActionEvent ae){
+		if (ae.getSource() == btn1){
+			System.out.printf("\nTen la : %s\nGioi tinh : %s\nDia chi : %s",tf1.getText(), cbg.getCurrent().getLabel(), tf2.getText());
+		}
+		else System.exit(0);
+	}
+	public static void main(String[] args){
+		formRegister temp = new formRegister("hihi");
+		temp.setSize(400,300);
+		temp.setVisible(true);
+	}
+}

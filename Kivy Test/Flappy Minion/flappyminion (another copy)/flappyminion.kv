@@ -1,0 +1,64 @@
+<Player>:
+    size_hint: None, None
+    source: 'Image/minion.png'
+<EnemyTop>:
+	size_hint: None, None
+    source: 'Image/enemy_top.png'
+    allow_stretch: True
+    keep_ratio: False
+<EnemyBottom>:
+    size_hint: None, None
+    source: 'Image/enemy_bottom.png'
+    allow_stretch: True
+    keep_ratio: False
+<FlappyMinion>:
+    score_label: score_id
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'Image/background.png'
+        Rectangle:
+            size: self.width, self.height / 5
+            pos: self.pos
+            source: 'Image/land.png'
+    Label:
+        id: score_id
+        text: 'Điểm : ' + str(int(root.score))
+        font_size: 20
+        size_hint: None,None
+        pos_hint: {'x' : .8, 'y' : .9}
+<MenuButton@Button>:
+    size_hint: .5, 1
+    background_color: .5, .5, 0, .3
+<MenuInstruction>:
+    size_hint: .6, .6
+    title: 'Hướng Dẫn'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+        Label:
+            text:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa anh van den du troi gio mua'
+<Menu>:
+    BoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'Image/background_game.jpg'
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        MenuButton:
+            text: 'Chơi Game'
+            on_press: root._playgame()
+        MenuButton:
+            text: 'Hướng Dẫn'
+            on_press: root._instruction()
+        MenuButton:
+            text: 'Thoát'
+            on_press: app.stop()
+
+

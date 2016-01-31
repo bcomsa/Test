@@ -1,0 +1,23 @@
+# ex52.kv
+
+<Ball>:
+    size: 65,60
+    canvas:
+        Color:
+            rgb: .75, 0, 0
+        Ellipse:
+            pos: self.pos
+            size: self.size
+    
+<Ex52>:
+    canvas:
+        Color:
+            rgb: 0,0,1
+        Rectangle:
+            size: root.width,root.height
+            pos: 0,0
+    Label:
+        pos: 300,root.top-100
+        text:'[size=32][color=8888CC]touch_down, touch_move[/color][/size]'
+        markup: True
+    Ball:

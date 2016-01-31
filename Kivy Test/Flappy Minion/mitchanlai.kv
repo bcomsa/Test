@@ -1,0 +1,57 @@
+<Button>:
+	background_color: 0, 0, 0, .2
+<Snow>:
+	canvas.before:
+		Rectangle:
+			size: self.size
+			pos: self.pos
+			source: 'Image/image2.jpg'
+<mitchanlai>:
+	game_id: game_id
+	canvas.before:
+		Rectangle:
+			size: self.size
+			pos: self.pos
+			source: 'Image/image.jpg'
+	orientation: 'vertical'
+	Label:
+		canvas.before:
+			Color: 
+				rgb: 1, 0, .5
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		text: root.title
+		size_hint: 1, .1
+	BoxLayout:
+		size_hint: 1, .07
+		spacing: 50
+		padding: 7
+		Button:
+			font_size: 10
+			text: 'Mít Mít Ki Ki'
+			on_press: root.play_sound()
+		Button:
+			font_size: 10
+			text: 'Mít Mít Heo Heo'
+		Button:
+			font_size: 10
+			text: 'Mít Chằn Lai Ki Ki'
+		Button:
+			font_size: 10
+			text: 'Mít Chằn Lai Mít Mít'
+		Button:
+			font_size: 10
+			text: 'Mít Chằn Lai Heo Heo'
+	BoxLayout:
+		id: game_id
+	BoxLayout:
+		spacing: 10
+		padding: 20,20,20,0
+		size_hint: 1, .2
+		Button:
+			text: 'Play Game'
+			on_press: root.show_game()
+		Button:
+			text: 'Tuyết Rơi Mùa Hè'
+			on_press: root.show_snow()

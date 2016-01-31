@@ -1,0 +1,34 @@
+<Player>:
+    size_hint: None, None
+    source: 'Image/minion.png'
+<EnemyTop>:
+	size_hint: None, None
+    source: 'Image/enemy_top.png'
+    allow_stretch: True
+    keep_ratio: False
+<EnemyBottom>:
+    size_hint: None, None
+    source: 'Image/enemy_bottom.png'
+    allow_stretch: True
+    keep_ratio: False
+<Land>:
+    size_hint: 1, .2
+    source: 'Image/land.png'
+    allow_stretch: True
+    keep_ratio: False
+<FlappyMinion>:
+    canvas.after:
+        Color:
+            rgb: 1, 1, .5
+        Line:
+            rectangle: self.x,self.y,self.width,self.height
+            width: 5
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'Image/background.png'
+    Label:
+        text: 'Điểm : ' + str(int(root.score))
+        center: root.center
+    Land:

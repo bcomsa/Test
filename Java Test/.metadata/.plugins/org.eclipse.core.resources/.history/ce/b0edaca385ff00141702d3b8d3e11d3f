@@ -1,0 +1,21 @@
+package helloworld;
+import java.awt.*;
+import java.awt.event.*;
+public class copyFile extends Frame{
+	Label top_lbl = new Label("Form Copy");
+	Label src_lbl = new Label("Source");
+	Label dst_lbl = new Label("Destination");
+	TextField src_tf = new TextField(10);
+	TextField dst_tf = new TextField(10);
+	
+	copyFile(String title){
+		super(title);
+		
+	}
+	public static void main(String[] args){
+		copyFile test = new copyFile("copy file");
+		test.setSize(300,300);
+		test.setVisible(true);
+	}
+
+}

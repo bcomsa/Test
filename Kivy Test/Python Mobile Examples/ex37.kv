@@ -1,0 +1,103 @@
+# ex37.kv
+
+<Ex37>:
+    cols: 3
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 1,0,0
+            Rectangle:
+                size: 1.0/3.0*root.width,1.0/2.0*root.height
+                pos: 0,0
+        Label:
+            text: 'sound1'
+            size_hint: None, None
+            size: self.size
+            pos_hint: {'center_x':.5,'top': 1}
+        Button:
+            text: 'Play'
+            size_hint: None, None
+            size: 1.0/6.0*root.width,1.0/4.0*root.height
+            pos: 1.0/12.0*root.width,1.0/8.0*root.height
+            on_press: app.play_sound1()
+
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 0,.5,1
+            Rectangle:
+                size: 1.0/3.0*root.width,1.0/2.0*root.height
+                pos: 0,0
+        Label:
+            text: 'sound2'
+            size_hint: None, None
+            size: self.size
+            pos_hint: {'center_x':.5,'top': 1}
+        Button:
+            text: 'Play'
+            size_hint: None, None
+            size: 1.0/6.0*root.width,1.0/4.0*root.height
+            pos: 1.0/12.0*root.width,1.0/8.0*root.height
+            on_press: app.play_sound2()
+
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 0,0,1
+            Rectangle:
+                size: 1.0/3.0*root.width,1.0/2.0*root.height
+                pos: 0,0
+        Label:
+            text: 'sound3'
+            size_hint: None, None
+            size: self.size
+            pos_hint: {'center_x':.5,'top': 1}
+        Button:
+            text: 'Play'
+            size_hint: None, None
+            size: 1.0/6.0*root.width,1.0/4.0*root.height
+            pos: 1.0/12.0*root.width,1.0/8.0*root.height
+            on_press: app.play_sound3()
+
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: .5,0,.5
+            Rectangle:
+                size: 1.0/3.0*root.width,1.0/2.0*root.height
+                pos: 0, 0
+        Button:
+            text: 'Stop'
+            size_hint: None, None
+            size: 1.0/6.0*root.width,1.0/4.0*root.height
+            pos: 1.0/12.0*root.width,1.0/8.0*root.height
+            on_press: app.stop_sound(0)
+            
+
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: .5,.75,0
+            Rectangle:
+                size: 1.0/3.0*root.width,1.0/2.0*root.height
+                pos: 0, 0
+        Button:
+            text: 'Stop'
+            size_hint: None, None
+            size: 1.0/6.0*root.width,1.0/4.0*root.height
+            pos: 1.0/12.0*root.width,1.0/8.0*root.height
+            on_press: app.stop_sound(1)
+
+    RelativeLayout:
+        canvas:
+            Color:
+                rgb: 1,1,0
+            Rectangle:
+                size: 1.0/3.0*root.width,1.0/2.0*root.height
+                pos: 0, 0
+        Button:
+            text: 'Stop'
+            size_hint: None, None
+            size: 1.0/6.0*root.width,1.0/4.0*root.height
+            pos: 1.0/12.0*root.width,1.0/8.0*root.height
+            on_press: app.stop_sound(2)

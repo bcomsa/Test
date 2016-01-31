@@ -1,0 +1,31 @@
+# ex38.kv
+
+<Ball>:
+    size: 65,60
+    canvas:
+        Color:
+            rgb: .75, 0, 0
+        Ellipse:
+            pos: self.pos
+            size: self.size
+    
+<Ex38>:
+    ball: ball_id
+    canvas:
+        Color:
+            rgb: 0,0,1
+        Rectangle:
+            size: root.width,root.height
+            pos: 0,0
+    Label:
+        pos: 300,root.top-100
+        text:
+            ( '[size=32][color=88FF22]' +
+            root.ball.anim_choice +
+            '[/color][/size]' )
+        markup: True
+    Ball:
+        id: ball_id
+
+        
+

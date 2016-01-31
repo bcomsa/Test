@@ -1,0 +1,39 @@
+<Tam>:
+    size_hint: .07, .15
+    source: 'Image/tamthegame_tam.zip'
+    anim_delay: 0.08
+    allow_stretch: True
+<TamTheGame>:
+    tam: tam_id
+    move_left_button: move_left_id
+    move_right_button: move_right_id
+    jump_button: jump_id
+    canvas.after:
+        Color:
+            rgb: 1, 1, .5
+        Line:
+            rectangle: self.x,self.y,self.width,self.height
+            width: 5
+    Tam:
+        id: tam_id
+        pos: root.width / 4.5, root.height / 5.4
+    Button:
+        text: '<='
+        id: move_left_id
+        size_hint: .1, .1
+        on_touch_down: if self.collide_point(*args[1].pos) : tam_id.move_left = True
+        on_touch_up: tam_id.move_left = False
+    Button:
+        text: '=>'
+        id: move_right_id
+        size_hint: .1, .1
+        x: self.width
+        on_touch_down: if self.collide_point(*args[1].pos) : tam_id.move_right = True
+        on_touch_up: tam_id.move_right = False
+    Button:
+        text: 'Jump'
+        id: jump_id
+        size_hint: .1, .1
+        x: root.width - self.width
+        on_press: if tam_id.jump == False : tam_id.jump = True
+        

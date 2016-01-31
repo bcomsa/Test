@@ -1,0 +1,53 @@
+# Ex33.kv
+
+<Ex33>:
+    rows: 3
+    canvas:
+        Color:
+            rgb: 1,0,0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        Button:
+            source: 'num0.png'
+            on_touch_down: print args
+        Button:
+            source: 'num1.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=1
+        Button:
+            source: 'num2.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=2
+        Button:
+            source: 'num3.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=3
+    BoxLayout:
+        Button:
+            source: 'num4.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=4
+        Button:
+            source: 'num5.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=5
+        Button:
+            source: 'num6.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=6
+        Button:
+            source: 'num7.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=7
+    BoxLayout:
+        Button:
+            source: 'num8.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=8
+        Button:
+            source: 'num9.png'
+            on_touch_down: if self.collide_point(*args[1].pos): root.Num=9
+        Label:
+            canvas.before:
+                Color:
+                    rgb: .9,.8,1
+                Rectangle:
+                    size: self.width-20,self.height-100
+                    pos: self.x+10,self.y+50
+            size_hint_x: 2
+            text: root.NumSel[root.Num]
+            markup: True

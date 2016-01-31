@@ -1,0 +1,200 @@
+# ex36.kv
+#:import rnd random.random
+#:set sz 42
+#:set off 4
+
+<ColorEllipse>:
+    size_hint: None, None
+    size: app.root.toolbox.w,app.root.toolbox.h
+    canvas:
+        Color:
+            rgb: rnd(),rnd(),rnd()
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<ColorRectangle>:
+    size_hint: None, None
+    size: app.root.toolbox.w,app.root.toolbox.h
+    canvas:
+        Color:
+            rgb: rnd(),rnd(),rnd()
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ColorUpTriangle>:
+    size_hint: None, None
+    size: app.root.toolbox.w,app.root.toolbox.h
+    canvas:
+        Color:
+            rgb: rnd(),rnd(),rnd()
+        Triangle:
+            points:
+                (self.x,self.y, self.x+self.width,self.y,
+                self.x+self.width/2,self.y+self.height)
+
+<ColorDownTriangle>:
+    size_hint: None, None
+    size: app.root.toolbox.w,app.root.toolbox.h
+    canvas:
+        Color:
+            rgb: rnd(),rnd(),rnd()
+        Triangle:
+            points:
+                (self.x,self.y+self.height,
+                self.x+self.width,self.y+self.height,
+                self.x+self.width/2,self.y)
+
+            
+<Ex36>:
+    toolbox: toolbox_id
+    drawing: drawing_id
+    ToolBox:
+        id: toolbox_id
+        drawing: drawing_id
+        size_hint_x: None
+        width: 100
+        pos: 0,0
+        canvas:
+            Color:
+                rgb: .5,0,0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+            Color:
+                rgb: 0,0,.5
+            Line:
+                points: 0,root.height-105, 100,root.height-105
+                width: 2
+            Line:
+                points: 0,root.height-245, 100,root.height-245
+                width: 2
+            Line:
+                points: 0,root.height-395, 100,root.height-395
+                width: 2
+        ToggleButton:
+            pos: off,root.height-45
+            size: sz,sz
+            group: 'shape'
+            on_state: toolbox_id.shape = self.state + ':0'
+            state: 'down'
+            canvas.after:
+                Line:
+                    ellipse: self.x+10,self.y+10,20,20
+        ToggleButton:
+            pos: off+50, root.height-45
+            size: sz,sz
+            group: 'shape'
+            on_state: toolbox_id.shape = self.state + ':1'
+            canvas.after:
+                Line:
+                    rectangle: self.x+10,self.y+10,20,20
+        ToggleButton:
+            pos: off,root.height-95
+            size: sz,sz
+            group: 'shape'
+            on_state: toolbox_id.shape = self.state + ':2'
+            canvas.after:
+                Line:
+                    points:
+                        (self.x+10,self.y+10, self.x+30,self.y+10,
+                        self.x+20,self.y+30)
+                    close: True
+        ToggleButton:
+            pos: off+50,root.height-95
+            size: sz,sz
+            group: 'shape'
+            on_state: toolbox_id.shape = self.state + ':3'
+            canvas.after:
+                Line:
+                    points:
+                        (self.x+10,self.y+30, self.x+30,self.y+30,
+                        self.x+20,self.y+10)
+                    close: True
+        Label:
+            pos: off,root.height-145
+            size: 2*sz,sz
+            text: 'width'
+        Button:
+            pos: off, root.height-195
+            size: sz,sz
+            on_press: if toolbox_id.w < 49 :toolbox_id.w += 1
+            canvas.after:
+                Line:
+                    points:
+                        (self.x+10,self.y+10, self.x+30,self.y+10,
+                        self.x+20,self.y+30)
+                    close: True
+        Button:
+            pos: off+50,root.height-195
+            size: sz,sz
+            on_press: if toolbox_id.w > 1: toolbox_id.w -= 1
+            canvas.after:
+                Line:
+                    points:
+                        (self.x+10,self.y+30, self.x+30,self.y+30,
+                        self.x+20,self.y+10)
+                    close: True
+        Label:
+            pos: off, root.height-245
+            size: 2*sz,sz
+            text: 'w: ' + str(toolbox_id.w)
+
+        Label:
+            pos: off,root.height-295
+            size: 2*sz,sz
+            text: 'height'
+        Button:
+            pos: off, root.height-345
+            size: sz,sz
+            on_press: if toolbox_id.h < 49 :toolbox_id.h += 1
+            canvas.after:
+                Line:
+                    points:
+                        (self.x+10,self.y+10, self.x+30,self.y+10,
+                        self.x+20,self.y+30)
+                    close: True
+        Button:
+            pos: off+50,root.height-345
+            size: sz,sz
+            on_press: if toolbox_id.h > 1: toolbox_id.h -= 1
+            canvas.after:
+                Line:
+                    points:
+                        (self.x+10,self.y+30, self.x+30,self.y+30,
+                        self.x+20,self.y+10)
+                    close: True
+        Label:
+            pos: off, root.height-395
+            size: 2*sz,sz
+            text: 'h: ' + str(toolbox_id.h)
+        Button:
+            pos: off, root.height-495
+            size: 2*sz,sz
+            text: 'Clear'
+            on_press: root.drawing.clear(*args)
+        Button:
+            pos: off, root.height-545
+            size: 2*sz,sz
+            text: 'Undo'
+            on_press: root.drawing.undo(*args)
+        Button:
+            pos: off, root.height-595
+            size: 2*sz,sz
+            text: 'Box'
+            on_press: root.drawing.box(*args)
+            
+            
+    Drawing:
+        id: drawing_id
+        toolbox: toolbox_id
+        size_hint_x: None
+        width: root.width-100
+        pos: 100,0
+        canvas:
+            Color:
+                rgb: 0,0,0
+            Rectangle:
+                size: self.size
+                pos: self.pos

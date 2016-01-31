@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Keyboard Event</title>
+	<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+	<style type="text/css">
+		#player{	
+			position: absolute;
+			background: blue;
+			width: 40px;
+			height: 40px;
+			border: 2px solid red;
+			border-radius: 10px;
+			text-align: center;
+			color: yellow;
+			font-family: monospace;
+			padding:50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="player">VIPTAM</div>
+	<script type="text/javascript">
+		POS = [0,0]
+		SPEED = 5
+		$(document).keypress(function(event)
+		      {
+		        key = String.fromCharCode(event.which)
+		        if (key == 'a')
+		        	move('left')
+		        if (key == 'd')
+		        	move('right')
+		        if (key == 'w')
+		        	move('up')
+		        if (key == 's')
+		        	move('down')
+		        {
+		          event.preventDefault()
+		       }
+  		})
+		function move(direction){
+			if (direction == 'up')
+				POS[1] -= SPEED;
+			else if (direction == 'down')
+				POS[1] += SPEED
+			else if (direction == 'left')
+				POS[0] -= SPEED
+			else if (direction == 'right')
+				POS[0] += SPEED
+			$('#player').css('left',POS[0] + 'px')
+			$('#player').css('top',POS[1] + 'px')
+		}
+	</script>
+</body>
+</html>

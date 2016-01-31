@@ -1,0 +1,11 @@
+package helloworld;
+import java.awt.*;
+import java.awt.event.*;
+public class copyFile implements Frame{
+	copyFile(String title)
+	public static void main(String[] args){
+		copyFile test = new copyFile("copy file");
+		test.set
+	}
+
+}
